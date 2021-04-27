@@ -55,6 +55,7 @@
     <el-table v-loading="loading" :data="userList" width="100%" @selection-change="handleSelectionChange">
       <el-table-column type="selection" width="55" align="center" />
       <el-table-column label="用户帐号" prop="user_name" align="center" />
+      <el-table-column label="手机号码" prop="phone" align="center" />
       <el-table-column label="角色" prop="role_name" :show-overflow-tooltip="true" width="150" align="center">
         <template slot-scope="scope">
           <span>{{ scope.row.roles|mergeRoles }}</span>

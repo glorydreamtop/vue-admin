@@ -24,8 +24,8 @@ export default {
   },
   data() {
     return {
-      title: 'Vue Element Admin',
-      logo: 'https://wpimg.wallstcn.com/69a1c46c-eb1c-4b46-8bd4-e9e686ef5251.png'
+      title: '宠物森友圈',
+      logo: 'http://imgs.zixinco.com/20210427/b996bb42917a8.png'
     }
   }
 }
