@@ -13,7 +13,7 @@ export function filterAsyncRoutes(routes) {
     const component = route.component
     const tmp = {
       path: route.path,
-      component: route.component === 'Layout' ? Layout : () => import(`@/views${component}`), // resolve => require([`@/views${component}`], resolve),
+      component: route.component === 'Layout' ? Layout : resolve => require([`@/views${component}`], resolve), // ,() => import(`@/views${component}`)
       redirect: route.redirect || undefined,
       hidden: !!route.hidden,
       name: route.name,

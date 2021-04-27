@@ -6,15 +6,15 @@
         <h3 class="title">Vue-Element-Admin</h3>
       </div>
 
-      <el-form-item prop="username">
+      <el-form-item prop="user_name">
         <span class="svg-container">
           <svg-icon icon-class="user" />
         </span>
         <el-input
           ref="username"
-          v-model="loginForm.username"
+          v-model="loginForm.user_name"
           placeholder="用户名"
-          name="username"
+          name="user_name"
           type="text"
           tabindex="1"
           autocomplete="on"
@@ -74,19 +74,20 @@ export default {
       }
     }
     const validatePassword = (rule, value, callback) => {
-      if (value.length < 6) {
-        callback(new Error('密码不能少于6位数'))
-      } else {
-        callback()
-      }
+      // if (value.length < 6) {
+      //   callback(new Error('密码不能少于6位数'))
+      // } else {
+      //   callback()
+      // }
+      callback()
     }
     return {
       loginForm: {
-        username: 'limuencom',
-        password: 'limuen.com'
+        user_name: '可可',
+        password: 'coco'
       },
       loginRules: {
-        username: [{ required: true, trigger: 'blur', validator: validateUsername }],
+        user_name: [{ required: true, trigger: 'blur', validator: validateUsername }],
         password: [{ required: true, trigger: 'blur', validator: validatePassword }]
       },
       passwordType: 'password',
@@ -113,7 +114,7 @@ export default {
     // window.addEventListener('storage', this.afterQRScan)
   },
   mounted() {
-    if (this.loginForm.username === '') {
+    if (this.loginForm.user_name === '') {
       this.$refs.username.focus()
     } else if (this.loginForm.password === '') {
       this.$refs.password.focus()
@@ -139,6 +140,7 @@ export default {
     },
     handleLogin() {
       this.$refs.loginForm.validate(valid => {
+        console.log(valid)
         if (valid) {
           this.loading = true
           this.$store.dispatch('user/login', this.loginForm)
