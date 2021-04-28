@@ -229,7 +229,7 @@ export default {
       rules: {
         user_name: [
           { required: true, message: '帐号不能为空', trigger: 'blur' },
-          { min: 3, max: 10, message: '帐号长度3-10之内', trigger: 'blur' }
+          { min: 1, max: 10, message: '帐号长度1-10之内', trigger: 'blur' }
         ],
         role_ids: [
           { type: 'array', required: true, message: '请选择角色', trigger: 'change' }

@@ -35,13 +35,6 @@
       <el-table-column label="宠物名字" align="center" prop="pet_name" />
       <!-- <el-table-column label="手机号码" prop="phone" align="center" /> -->
       <el-table-column
-        label="主人名字"
-        prop="owner"
-        :show-overflow-tooltip="true"
-        width="150"
-        align="center"
-      />
-      <el-table-column
         label="性别"
         prop="sex"
         :show-overflow-tooltip="true"
@@ -57,6 +50,13 @@
           <span>{{ scope.row.age }} 岁</span>
         </template>
       </el-table-column>
+      <el-table-column
+        label="主人名字"
+        prop="owner"
+        :show-overflow-tooltip="true"
+        width="150"
+        align="center"
+      />
       <el-table-column
         label="操作"
         align="center"
